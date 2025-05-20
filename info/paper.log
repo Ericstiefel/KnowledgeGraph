@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.7)  20 MAY 2025 04:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.7)  20 MAY 2025 04:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -218,24 +218,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
  ABD: EveryShipout initializing macros (C:\Users\15169\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2024/06/23 v1.3e Standard LaTeX Color (DPC)
  (C:\Users\15169\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
@@ -243,7 +243,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 149.
  (C:\Users\15169\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx))
-Package hyperref Info: Link coloring OFF on input line 16.
+Package hyperref Info: Link coloring OFF on input line 14.
  (paper.out) (paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
@@ -267,87 +267,5 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\15169\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
-[]\OT1/cmr/m/sc/17.28 Mitigating LLM Hal-lu-ci-na-tions us-ing
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 25.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 25.
-
-
-[1{C:/Users/15169/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/15169/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
-
-]
-
-[2]
-Underfull \vbox (badness 6944) has occurred while \output is active []
-
-
-
-[3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[4]
-
-[5]
-<C:/Users/15169/Documents/KnowledgeGraph/accuracy_vs_text_length.png, id=172, 867.24pt x 505.89pt>
-File: C:/Users/15169/Documents/KnowledgeGraph/accuracy_vs_text_length.png Graphic file (type png)
-<use C:/Users/15169/Documents/KnowledgeGraph/accuracy_vs_text_length.png>
-Package pdftex.def Info: C:/Users/15169/Documents/KnowledgeGraph/accuracy_vs_text_length.png  used on input line 155.
-(pdftex.def)             Requested size: 317.9892pt x 185.49356pt.
-<C:/Users/15169/Documents/KnowledgeGraph/f1_score_vs_text_length.png, id=174, 867.24pt x 505.89pt>
-File: C:/Users/15169/Documents/KnowledgeGraph/f1_score_vs_text_length.png Graphic file (type png)
-<use C:/Users/15169/Documents/KnowledgeGraph/f1_score_vs_text_length.png>
-Package pdftex.def Info: C:/Users/15169/Documents/KnowledgeGraph/f1_score_vs_text_length.png  used on input line 162.
-(pdftex.def)             Requested size: 317.9892pt x 185.49356pt.
-<C:/Users/15169/Documents/KnowledgeGraph/runtime_vs_text_length.png, id=175, 867.24pt x 505.89pt>
-File: C:/Users/15169/Documents/KnowledgeGraph/runtime_vs_text_length.png Graphic file (type png)
-<use C:/Users/15169/Documents/KnowledgeGraph/runtime_vs_text_length.png>
-Package pdftex.def Info: C:/Users/15169/Documents/KnowledgeGraph/runtime_vs_text_length.png  used on input line 169.
-(pdftex.def)             Requested size: 317.9892pt x 185.49356pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-[6 <C:/Users/15169/Documents/KnowledgeGraph/accuracy_vs_text_length.png> <C:/Users/15169/Documents/KnowledgeGraph/f1_score_vs_text_length.png>]
-
-[7 <C:/Users/15169/Documents/KnowledgeGraph/runtime_vs_text_length.png>]
-
-[8]
-
-[9]
-Underfull \hbox (badness 6063) in paragraph at lines 310--313
-[]\OT1/cmr/m/n/10 Wikipedia con-trib-u-tors. (2024). Retrieval-augmented gen-er-a-tion. []$\OT1/cmtt/m/n/10 https : / / en .
- []
-
-
-
-[10] (paper.aux)
- ***********
-LaTeX2e <2024-11-01> patch level 2
-L3 programming layer <2025-01-18>
- ***********
-Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: F9131BE0470044C8CF7E6C9CF7644DB2;3421.
- ) 
-Here is how much of TeX's memory you used:
- 9735 strings out of 473530
- 154478 string characters out of 5714795
- 562413 words of memory out of 5000000
- 32797 multiletter control sequences out of 15000+600000
- 563142 words of font info for 47 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 75i,12n,79p,1489b,616s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\15169\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/15169/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/15169/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/15169/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/15169/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/15169/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/15169/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on paper.pdf (10 pages, 329475 bytes).
-PDF statistics:
- 273 PDF objects out of 1000 (max. 8388607)
- 68 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]\OT1/cmr/m/sc/17.28 Mitigating LLM Hal-l
