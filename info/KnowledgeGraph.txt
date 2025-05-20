@@ -1,0 +1,90 @@
+A knowledge graph represents a network of entities(objects, events, situations, or concepts) and illustrates the relationship between them. 
+Typically stored in a graph database and visualized as a graph structure.
+
+Node: person/place/thing
+
+Edge: Relationship between the nodes
+
+Utility:
+
+    -Discern the meaning of homographs (same spelling different meaning)
+    -"Understand" the hidden underlying connection between nouns and use it to process the context
+
+
+A Knowledge Graph is a structured representation of text, typically stored in format (Subject, Predicate, Object) representing the relationship between two entities.
+
+RAG(Retreival Augmented Generation) is a technique for enhancing the accuracy of generative models with information from relevant data sources.
+
+    Without RAG, the LLM takes the user input and creates a response based on information it was trained on—or what it already knows. 
+    With RAG, an information retrieval component is introduced that utilizes the user input to first pull information from a new data source. 
+    The user query and the relevant information are both given to the LLM. The LLM uses the new knowledge and its training data to create better responses. 
+
+    Create external data
+    The new data outside of the LLM's original training data set is called external data. It can come from multiple data sources, such as a APIs, databases, or document repositories. 
+    The data may exist in various formats like files, database records, or long-form text. 
+    Another AI technique, called embedding language models, converts data into numerical representations and stores it in a vector database. 
+    This process creates a knowledge library that the generative AI models can understand.
+
+    Retrieve relevant information
+    The next step is to perform a relevancy search. 
+    The user query is converted to a vector representation and matched with the vector databases. 
+    For example, consider a smart chatbot that can answer human resource questions for an organization. 
+    If an employee searches, "How much annual leave do I have?" the system will retrieve annual leave policy documents alongside the individual employee's past leave record. 
+    These specific documents will be returned because they are highly-relevant to what the employee has input. 
+    The relevancy was calculated and established using mathematical vector calculations and representations.
+
+    Augment the LLM prompt
+    Next, the RAG model augments the user input (or prompts) by adding the relevant retrieved data in context. This step uses prompt engineering techniques to communicate effectively with the LLM. The augmented prompt allows the large language models to generate an accurate answer to user queries.
+
+    Update external data
+    The next question may be—what if the external data becomes stale? To maintain current information for retrieval, asynchronously update the documents and update embedding representation of the documents. You can do this through automated real-time processes or periodic batch processing. This is a common challenge in data analytics—different data-science approaches to change management can be used.
+
+    RAG Pipeline:
+    (1) Prompt 
+    (2) Query database 
+    (3) Extract most relevant information for enhanced context
+    (4) Prompt + relevant information 
+    (5) Generate Response
+
+RAG with knowledge graphs
+    Processing the input into a knowledge graph before performing RAG has shown improvements in multi-hop reasoning
+
+    - Train a LLM to extract a Knowledge Graph from the text
+    - Place this Knowledge graph in the RAG pipeline
+
+
+KGGen (Text to Knowledge Graph)
+    KGGen uses a LM(Language Model) based extractor to read unstructured text and predict (Subject, Predicate, Objet) triples to capture relationships between entities.
+    Then, an iterative LM based clustering algorithm is applied to refine the graph.
+    Yet another LM is utilized to examine the extracted Nodes to identify which belong to the same underlying entities, simplifying the resulting graph.
+
+    Steps:
+        Entity and Relation Extraction
+            - Input Text is placed into the model to identify any detected entities
+            - This is then placed into another model that predicts (subject, predicate, relation) triples for our knowledge graph
+        
+        Aggregation
+            - After extraction, we collect all the unique triples and place them into a graph
+            - Normalization: all entites and edges are lowercased to avoid redundancy
+        
+        Cluster 
+            - We need to extract clusters of entities that relate to the same thing (USA, America, United States of America, etc.)
+            - Unsupervised Clustering algorithm (KNN, HCA) that is deterministic (no GMM)
+
+            Novel Idea used in paper: 
+            (LLM used in paper is simply prompting GPT-4o)
+                LLM as Judge Validation:
+                        Handling Nodes:
+                        (1) LLM recieves the groupings and with binary classification determines if its a valid group.
+                        (2) If the input cluster passes the check, it is determined a group, and labeled.
+                        (3) This label should be the term that most accurately describes the group.
+
+                        (4) Steps 1-3 are repeated n times or until the LLM fails to extract a valid new cluster within a loop.
+
+                        (5) After initial clustering, the remaining entities are processed of batch size b. 
+                        For each batch, the LLM determines if any of these batches should be added to any previously formed groups (same binary LLM)
+
+                        (6) Step 5 is repeated multiple times until all remaining entities have been checked
+
+                Handling Edges:
+                    The same LLM based approach is also applied to edges, but with prompts modified to focus on the relationship as opposed to entity clustering    

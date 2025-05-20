@@ -1,0 +1,134 @@
+These prompts are the same ones utilized in the KGGen paper, utilizing few-shot 
+prompting to obtain more accurate results, especially the lightweight llama model I used 
+due to compute boundaries, tinyllama.
+
+
+PROMPTS FOR KG-EXTRACTION 
+
+
+Prompt for extracting entities: 
+
+Extract key entities from the given
+text. Extracted entities are nouns, verbs, or adjectives,
+particularly regarding sentiment. This is for an extraction
+task, please be thorough and accurate to the reference text.
+
+
+Prompt for extracting relations: 
+
+Extract subject-predicate-object
+triples from the assistant message. A predicate (1
+word) defines the relationship between the subject and
+object. Relationship may be fact or sentiment based on
+assistant’s message. Subject and object are entities.
+Entities provided are from the assistant message and
+prior conversation history, though you may not need all of
+them. This is for an extraction task, please be thorough,
+accurate, and faithful to the reference text.
+
+
+Prompt for clustering entities:
+
+Find ONE cluster of related entities from this list. A
+cluster should contain entities that are the same in
+meaning, with different:
+- tenses
+- plural forms
+- stem forms
+- upper/lower cases
+Or entities with close semantic meanings.
+Return only if you find entities that clearly belong
+together.
+If you can’t find a clear cluster, return an empty list.
+
+
+Prompt for validating node clusters:
+
+Verify if these entities belong in the same cluster.
+A cluster should contain entities that are the same in
+meaning, with different:
+- tenses
+- plural forms
+- stem forms
+- upper/lower cases
+Or entities with close semantic meanings.
+Return the entities that you are confident belong together
+as a single cluster.
+If you’re not confident, return an empty list.
+Prompt for clustering edges
+Find ONE cluster of closely related predicates from this
+list.
+A cluster should contain predicates that are the same in
+meaning, with different:
+- tenses
+- plural forms
+- stem forms
+- upper/lower cases
+Predicates are the relations between subject and object
+entities. Ensure that the predicates in the same cluster
+have very close semantic meanings to describe the relation
+between the same subject and object entities.
+Return only if you find predicates that clearly belong
+together.
+If you can’t find a clear cluster, return an empty list.
+
+
+Prompt for validating cluster edges:
+
+Verify if these predicates belong in the same cluster.
+A cluster should contain predicates that are the same in
+meaning, with different:
+- tenses
+- plural forms
+- stem forms
+- upper/lower cases
+Predicates are the relations between subject and object
+entities. Ensure that the predicates in the same cluster
+have very close semantic meanings to describe the relation
+between the same subject and object entities.
+Return the predicates that you are confident belong together
+as a single cluster.
+If you’re not confident, return an empty list.
+
+VALIDATION OF KG EXTRACTION
+
+
+Prompt for extracting entities: 
+
+Extract key entities from the given
+text. Extracted entities are nouns, verbs, or adjectives,
+particularly regarding sentiment. This is for an extraction
+task, please be thorough and accurate to the reference text.
+Prompt for extracting relations: Extract subject-predicate-object
+triples from the assistant message. A predicate (1-3
+words) defines the relationship between the subject and
+object. Relationship may be fact or sentiment based on
+assistant’s message. Subject and object are entities.
+Entities provided are from the assistant message and
+prior conversation history, though you may not need all of
+them. This is for an extraction task, please be thorough,
+accurate, and faithful to the reference text.
+
+
+PROMPTS FOR MINE
+
+
+Prompt for extracting a fact from article: 
+
+Extract 15 basic, single
+pieces of information from the following text that describe
+how one object relates to another. Present the pieces of
+info in short sentences and DO NOT include info not directly
+present in the text. Your output should be of the form [
+"info1", "info2" ,..., "info15" ]. "Make sure the strings
+are valid Python strings."
+
+
+Prompt for evaluating if a fact is contained in the query result:
+
+ROLE: "You are an evaluator that checks if the correct
+answer can be deduced from the information in the context.
+TASK: Determine whether the context contains the information
+stated in the correct answer.
+Respond with "1" if yes, and "0" if no. Do not provide any
+explanation, just the number.

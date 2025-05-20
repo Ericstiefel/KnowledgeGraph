@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+
+\title{Knowledge Graphs and Retrieval-Augmented Generation (RAG)}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction to Knowledge Graphs}
+
+A \textbf{knowledge graph} represents a network of entities (objects, events, situations, or concepts) and illustrates the relationship between them. It is typically stored in a graph database and visualized as a graph structure.
+
+\begin{itemize}
+    \item \textbf{Node:} person/place/thing
+    \item \textbf{Edge:} relationship between the nodes
+\end{itemize}
+
+\textbf{Utility:}
+\begin{itemize}
+    \item Discern the meaning of homographs (same spelling, different meaning)
+    \item Understand hidden underlying connections between nouns to process context
+\end{itemize}
+
+A knowledge graph is a structured representation of text, often stored in the format:
+\[
+\texttt{(Subject, Predicate, Object)}
+\]
+This format captures relationships between two entities.
+
+\section{Retrieval-Augmented Generation (RAG)}
+
+\textbf{Retrieval-Augmented Generation (RAG)} is a technique used to enhance the accuracy of generative models using external data sources.
+
+\subsection*{Without RAG}
+The large language model (LLM) takes user input and generates a response based only on its training data.
+
+\subsection*{With RAG}
+\begin{enumerate}[label=\alph*)]
+    \item The user input is used to retrieve information from an external data source.
+    \item The query and the retrieved context are both fed into the LLM.
+    \item The LLM combines the new knowledge with its internal training to generate more accurate responses.
+\end{enumerate}
+
+\subsection*{Components of RAG}
+
+\begin{itemize}
+    \item \textbf{Create External Data:} Data can come from APIs, databases, or documents. Embedding language models convert this data into vectors and store it in a vector database.
+    
+    \item \textbf{Retrieve Relevant Information:} The user query is vectorized and matched with stored vectors. Example: A chatbot answering HR questions might retrieve leave policy documents and an employee’s past leave record.
+
+    \item \textbf{Augment the LLM Prompt:} The prompt is enriched with relevant retrieved data using prompt engineering techniques.
+
+    \item \textbf{Update External Data:} To avoid staleness, documents and their embeddings should be periodically updated (real-time or batch processes).
+\end{itemize}
+
+\subsection*{RAG Pipeline}
+\begin{enumerate}
+    \item Prompt
+    \item Query database
+    \item Extract most relevant information
+    \item Combine prompt with retrieved information
+    \item Generate response
+\end{enumerate}
+
+\section{RAG with Knowledge Graphs}
+
+Integrating knowledge graphs into the RAG pipeline has demonstrated improved multi-hop reasoning.
+
+\begin{itemize}
+    \item Train a LLM to extract a knowledge graph from unstructured text
+    \item Insert this graph into the RAG pipeline as a structured intermediary
+\end{itemize}
+
+\section{KGGen: Text to Knowledge Graph}
+
+\textbf{KGGen} is a system that uses language models to generate knowledge graphs from unstructured text.
+
+\subsection*{Process Overview}
+
+\begin{enumerate}
+    \item \textbf{Entity and Relation Extraction}
+    \begin{itemize}
+        \item Input text is processed to detect entities
+        \item A separate model extracts \texttt{(Subject, Predicate, Object)} triples
+    \end{itemize}
+    
+    \item \textbf{Aggregation}
+    \begin{itemize}
+        \item Unique triples are collected to form the graph
+        \item Normalization: all entities and edges are lowercased to avoid redundancy
+    \end{itemize}
+
+    \item \textbf{Clustering}
+    \begin{itemize}
+        \item Cluster similar entities (e.g., USA, America, United States)
+        \item Deterministic unsupervised clustering algorithm (e.g., KNN, HCA)
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Paper's Novel Idea: LLM as Judge}
+
+\subsubsection*{Handling Nodes}
+\begin{enumerate}[label=(\arabic*)]
+    \item The LLM receives clusters and performs binary classification to validate the groupings.
+    \item If the input cluster passes the check, it is accepted as a valid group and labeled.
+    \item The label is chosen to best represent the entire group.
+    \item Steps 1--3 are repeated either for a fixed number of iterations or until no new valid clusters are found.
+    \item The remaining unclustered entities are processed in batches. For each batch, the LLM checks whether any entities should be added to existing groups.
+    \item This batch-to-cluster association step is repeated until all remaining entities are handled.
+\end{enumerate}
+
+\subsubsection*{Handling Edges}
+\begin{itemize}
+    \item The same LLM-based classification is used to group edges.
+    \item Prompts are modified to focus on relationships instead of entity clustering.
+\end{itemize}
+
+
+\end{document}
