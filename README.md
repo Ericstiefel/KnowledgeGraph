@@ -66,14 +66,14 @@ F1 Score: Token-level overlap for partial credit.
 
 Runtime: Tracks compute efficiency (notably, LLM API calls were run on Google’s servers, which are even faster than locally running a smaller NN on a laptop).
 
-Example Output Format: 
+Example Training Output Format: 
 ```
 {
   "question": "...",
-  "ground_truths": ["Jonathan Stewart"],
+  "ground_truths": ["John Doe"],
   "predictions": {
     "Lightweight": {
-      "answer": "Jonathan Stewart",
+      "answer": "John Doe",
       "time_seconds": 5.35,
       "accuracy_em": 1,
       "f1_score": 1.0
